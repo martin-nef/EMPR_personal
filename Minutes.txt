@@ -1,0 +1,52 @@
+﻿Minutes And Stuff
+
+Week 3
+Set:
+Luis : UI( Hello, menu)
+Chris : Infrared Sensor
+Naz : Keypad Interrupts
+Martin : PWM Interrupts
+
+Done:
+Luis : UI
+Chris : Infrared Sensor
+Naz : Fixed make file, fixed keypad interrupt code, timers
+Martin : Made PWM, Got servos working
+
+Week 4
+Set:
+Luis : Calibration mode/ Tape Measure mode
+Chris : Calibration mode /Tape Measure mode
+Naz : Watchdog Timer for ultrasound
+Martin : Ultrasound output translation
+
+Week 5
+Set:
+Luis : Calibration mode/ Tape Measure mode
+Chris : Calibration mode/ Tape Measure mode
+Naz : Other timers for ultrasound
+Martin : Other timers for ultrasound
+
+Done:
+Naz : Ultrasound send signal done
+Martin : Ultrasound send signal done
+
+Week 6
+Set:
+Luis : Calibration mode/ Tape Measure mode
+Chris : Calibration mode/ Tape Measure mode
+Naz : Other timers for ultrasound
+Martin : Scan mode
+
+Done:
+Luis : Calibration mode/ TapeMeasure mode and UI for each
+Chris : Calibration mode/ TapeMeasure mode and UI for each
+Naz : GPIO and timer for ultrasound
+Martin : Scan mode
+
+Week 7
+Set:
+Luis : Individual/ Ultrasound testing
+Chris : Graphicsss
+Naz : Individual / ultrasound testing
+Martin : Sweep mode output to text document
