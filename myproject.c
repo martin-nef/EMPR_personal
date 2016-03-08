@@ -380,18 +380,52 @@ void tempTest(void){
 	int x = 0;
 	char button = "";
 	char string[20] = "";
-	sprintf(string, "\r\n");
+	sprintf(string, "\r\ntemptest");
 	sendUART(string);
-	while(1){
+	double readings1[5];
+	double readings2[5];
+	double min1 = -1;
+	double min2 = -1;
+	double max1 = 9999;
+	double max2 = 9999;
+
+	while(x<5){
 		x++;
-		sprintf(string, "\r reading %d: %f    ", x, irMedian_());
-		sendUART(string);
-		SystickTimer(80);
+		readings1[x] = irDistance();
+		if (min1 > readings1[x]) {
+			min1 = readings1[x];
+		}
+		if (max1 < readings1[x]) {
+			max1 = readings1[x];
+		}
+		// sprintf(string, "\r reading %d: %f    ", x, irMedian_());
+		// sendUART(string);
+		// SystickTimer(80);
+		// button = KeypadTest();
+		// if(button == '0'){
+			// break;
+		// };
+	};
+	while(1){
 		button = KeypadTest();
 		if(button == '0'){
 			break;
 		};
-	};
+	}
+	x = 0;
+	while(x<5){
+		readings2[x] = irDistance();
+		if (min2 > readings2[x]) {
+			min2 = readings2[x];
+		}
+		if (max2 < readings2[x]) {
+			max2 = readings2[x];
+		}
+	}
+	double range1 = max1 - min1;
+	double range2 = max2 - min2;
+	sprintf(string, "range1: %f, \r\nrange2: %f  ", range1, range2);
+	sendUART(string);
 }
 
 /*
@@ -606,11 +640,11 @@ void main(void){
 	SetupPWM(prescale);
 	initServo(1);
 
-	// tempTest();
 	// calibrateSensors();
 	irCalibrate(2934.000000, 776.000000);
+	tempTest();
 	
 	// tempTest();
 	
-	track();
+	// track();
 }

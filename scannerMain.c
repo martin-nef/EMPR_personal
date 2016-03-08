@@ -21,18 +21,22 @@ void main (void){
 	//Setup external device communication, I2C1 Bus && UAR
 	setupUART();
 	setupI2C1();
+	setupADC();
 	setupGPIO(2,5,1);
+	uint32_t prescale = 10;
+	SetupPWM(prescale);
 
-	while(1){
-		float dist = usScan();
-		char msg[BUFFLENGTH] = "";
-		char* strPtr = &msg;
-		if(dist > 0){
-			sprintf(strPtr, "\r\nRaw Value: %.3f", dist);
-			UART_SendMSG(strPtr, msg);
-		}else{
-			sprintf(strPtr, "\r\nReconnect UltraSound (Error:%.1f)", dist);
-			UART_SendMSG(strPtr, msg);
-		}
-	}
+	scanMode();
+	// while(1){
+	// 	float dist = usScan();
+	// 	char msg[BUFFLENGTH] = "";
+	// 	char* strPtr = &msg;
+	// 	if(dist > 0){
+	// 		sprintf(strPtr, "\r\nRaw Value: %.3f", dist);
+	// 		UART_SendMSG(strPtr, msg);
+	// 	}else{
+	// 		sprintf(strPtr, "\r\nReconnect UltraSound (Error:%.1f)", dist);
+	// 		UART_SendMSG(strPtr, msg);
+	// 	}
+	// }
 }

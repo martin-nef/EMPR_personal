@@ -17,4 +17,3 @@ double irMedian_(void);
 double irMedianRawTimed(int time_);
 void debugPrintNum(void);
 void track(void);
-void move(void);
